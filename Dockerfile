@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.5
 
 # originally from
 # https://raw.githubusercontent.com/nginxinc/docker-nginx/1.11.10/mainline/alpine/Dockerfile
