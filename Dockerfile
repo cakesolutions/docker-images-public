@@ -34,4 +34,4 @@ COPY .aws /root/.aws
 #     --endpoint-url http://localhost:8000 \
 # aws dynamodb list-tables --endpoint-url http://localhost:8000
 
-ENTRYPOINT ["/opt/run.sh"]
+CMD ["/opt/run.sh"]
