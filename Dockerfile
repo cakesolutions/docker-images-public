@@ -78,7 +78,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 	&& curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz -o nginx.tar.gz \
 	&& curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz.asc  -o nginx.tar.gz.asc \
     && curl -fSL https://github.com/openresty/echo-nginx-module/archive/v0.60.tar.gz -o echo-nginx-module.tar.gz \
-    && curl -L http://xrl.us/cpanm > /bin/cpanm && chmod +x /bin/cpanm \
+    && curl -L http://cpanmin.us | perl - App::cpanminus \
     && cpanm XML::Hash \
 	&& export GNUPGHOME="$(mktemp -d)" \
 	&& gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$GPG_KEYS" \
