@@ -1,0 +1,4 @@
+# used when stack is invoked with --system-ghc
+packages: []
+extra-deps: []
+resolver: lts-9.5
