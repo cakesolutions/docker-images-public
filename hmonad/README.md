@@ -6,7 +6,7 @@ a very fast startup.
 See the example in the `example` directory. Start it with
 
 ```
-docker-compose -f example/hello.yml up
+docker-compose -f example/HelloWorld/hello.yml up
 ```
 
 and direct your browser at http://localhost:1337
