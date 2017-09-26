@@ -9,7 +9,7 @@ See the example in the `example` directory. Start it with
 docker-compose -f example/HelloWorld/hello.yml up
 ```
 
-and direct your browser at http://localhost:1337
+and direct your browser at http://localhost:1337/hello/world
 
 We are aware that we could use `stack script` and get access to
 arbitrary dependencies, but it is critical that there is no network
