@@ -1,0 +1,10 @@
+version: "2.0"
+
+services:
+  hello:
+    image: cakesolutions/hmonad:latest
+    ports:
+      - "1337:80"
+    volumes:
+      - ./src:/opt/src
+      - ./data:/opt/data
