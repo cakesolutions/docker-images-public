@@ -13,6 +13,8 @@ COPY stack.yaml /root/.stack/global-project/stack.yaml
 RUN stack setup --system-ghc && \
     stack install scotty
 
+RUN stack install shakespeare
+
 COPY run.sh /opt/
 
 EXPOSE 80
