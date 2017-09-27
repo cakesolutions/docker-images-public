@@ -3,6 +3,8 @@
 Allows compiling / running user-defined Haskell http applications with
 a very fast startup.
 
+Perfect for writing mocks of your external dependencies.
+
 See the example in the `example` directory. Start it with
 
 ```
