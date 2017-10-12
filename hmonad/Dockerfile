@@ -13,7 +13,7 @@ COPY stack.yaml /root/.stack/global-project/stack.yaml
 RUN stack setup --system-ghc && \
     stack install scotty
 
-RUN stack install shakespeare
+RUN stack install shakespeare scotty-tls network-uri hxt hxt-xpath
 
 COPY run.sh /opt/
 
