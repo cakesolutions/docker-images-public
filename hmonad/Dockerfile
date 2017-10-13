@@ -10,10 +10,10 @@ RUN apt-get update -qq && \
 
 COPY stack.yaml /root/.stack/global-project/stack.yaml
 
-RUN stack setup --system-ghc && \
-    stack install scotty
+RUN stack setup --system-ghc
 
-RUN stack install shakespeare scotty-tls network-uri hxt hxt-xpath
+RUN stack install scotty scotty-tls network-uri hxt shakespeare \
+                  http-client http-client-tls http-types uuid bytestring
 
 COPY run.sh /opt/
 
