@@ -26,3 +26,5 @@ RUN\
 COPY Play-2.6.jar /opt/newrelic/extensions/
 COPY Play-2.6-Java.jar /opt/newrelic/extensions/
 COPY Akka-Streams_2.12.jar /opt/newrelic/extensions/
+COPY Play-2.6-WS.jar /opt/newrelic/extensions/
+COPY Play-2.6-WS-Java.jar /opt/newrelic/extensions/
