@@ -18,9 +18,10 @@ RUN\
   rm /tmp/yourkit.zip
 
 RUN\
-  wget -O /tmp/newrelic.zip https://download.newrelic.com/newrelic/java-agent/newrelic-agent/3.44.0/newrelic-java-3.44.0.zip &&\
+  wget -O /tmp/newrelic.zip https://download.newrelic.com/newrelic/java-agent/newrelic-agent/3.44.1/newrelic-java-3.44.1.zip &&\
   unzip /tmp/newrelic.zip -d /opt &&\
   rm /tmp/newrelic.zip &&\
   mkdir -p /opt/newrelic/logs /opt/newrelic/extensions
 
 COPY Akka-Streams_2.12.jar /opt/newrelic/extensions/
+COPY AWS-Kinesis-Client.jar /opt/newrelic/extensions/
