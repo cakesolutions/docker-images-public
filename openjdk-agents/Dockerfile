@@ -25,3 +25,5 @@ RUN\
 
 COPY Akka-Streams_2.12.jar /opt/newrelic/extensions/
 COPY AWS-Kinesis-Client.jar /opt/newrelic/extensions/
+COPY Kinesis-Producer.jar /opt/newrelic/extensions/
+COPY Redisson_3.jar /opt/newrelic/extensions/
