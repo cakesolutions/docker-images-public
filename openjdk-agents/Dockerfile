@@ -12,7 +12,7 @@ FROM openjdk:8-jre
 ENV YOURKIT_AGENT /opt/yourkit/bin/linux-x86-64/libyjpagent.so
 
 RUN\
-  wget -O /tmp/yourkit.zip https://www.yourkit.com/download/YourKit-JavaProfiler-2017.02-b66.zip &&\
+  wget -O /tmp/yourkit.zip https://www.yourkit.com/download/YourKit-JavaProfiler-2017.02-b68.zip &&\
   unzip /tmp/yourkit.zip -d /opt &&\
   mv /opt/YourKit-JavaProfiler-2017.02 /opt/yourkit &&\
   rm /tmp/yourkit.zip
