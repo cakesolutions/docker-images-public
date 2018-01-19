@@ -26,8 +26,4 @@ RUN\
 COPY Akka-Streams_2.12.jar /opt/newrelic/extensions/
 COPY AWS-Kinesis-Client.jar /opt/newrelic/extensions/
 COPY Kinesis-Producer.jar /opt/newrelic/extensions/
-COPY Redisson_3.jar /opt/newrelic/extensions/
-COPY Redisson-Executor-3.0.jar /opt/newrelic/extensions/
-COPY Redisson-Executor-3.5.jar /opt/newrelic/extensions/
-COPY Redisson_3.0.jar /opt/newrelic/extensions/
-COPY Redisson_3.4.jar /opt/newrelic/extensions/
+COPY Redisson_3.5.jar /opt/newrelic/extensions/
