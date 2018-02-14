@@ -12,7 +12,7 @@ set -m
 #    sleep 1
 #done
 
-for A in `find /schemas -type f -name "*.sql"` ; do
+for A in /schemas/*.sql ; do
     echo "running schema script $A"
     until `/opt/mysql/server-5.6/bin/mysql --user=root -P3306 < $A`
     do
