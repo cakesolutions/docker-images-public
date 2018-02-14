@@ -5,12 +5,19 @@ set -m
 
 /opt/mysql/server-5.6/bin/mysqld_safe &
 
-for A in `find /schemas -type f` ; do
+# fails with "mysqld not found" ... not sure why.
+#until `/opt/mysql/server-5.6/bin/mysqladmin ping -h localhost`
+#do
+#    echo "waiting for DB"
+#    sleep 1
+#done
+
+for A in `find /schemas -type f -name "*.sql"` ; do
     echo "running schema script $A"
-    until `. $A`
+    until `/opt/mysql/server-5.6/bin/mysql --user=root -P3306 < $A`
     do
-      sleep 1
-      echo "Retrying script $A"
+        echo "trying again"
+        sleep 1
     done
 done
 
