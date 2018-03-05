@@ -10,12 +10,18 @@ RUN apt-get update -qq && \
 
 COPY stack.yaml /root/.stack/global-project/stack.yaml
 
+# Upgrade is necessary as the bundled version has a bug preventing it handling `--` within flags (1.6.1+ required)
+# See: https://github.com/commercialhaskell/stack/issues/3345
+RUN stack upgrade
 RUN stack setup --system-ghc
 
 RUN stack install scotty scotty-tls network-uri hxt shakespeare \
-                  http-client http-client-tls http-types uuid bytestring
+                  http-client http-client-tls http-types uuid bytestring \
+                  cassava extra
 
 COPY run.sh /opt/
+
+RUN chmod +x /opt/run.sh
 
 EXPOSE 80
 CMD ["/opt/run.sh"]
