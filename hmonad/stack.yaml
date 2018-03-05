@@ -5,10 +5,13 @@ extra-deps:
   # check https://hackage.haskell.org/package/<name>
   - base-4.10.1.0
   - scotty-0.11.0
+  - scotty-tls-0.4.1
   - shakespeare-2.0.14
   - network-uri-2.6.1.0
   - cassava-0.5.1.0
   - text-short-0.1.1
+  - hxt-9.3.1.16
+  - hxt-xpath-9.1.2.2
 flags:
   cassava:
     bytestring--LT-0_10_4: false
