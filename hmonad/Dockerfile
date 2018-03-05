@@ -4,7 +4,7 @@ FROM haskell:8.2
 # binary from that directory. Allows for user-defined http servers.
 
 RUN apt-get update -qq && \
-    apt-get install -y make xz-utils && \
+    apt-get install -y make xz-utils curl && \
     apt-get autoremove -qq && \
     apt-get clean
 
