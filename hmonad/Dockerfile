@@ -15,8 +15,10 @@ COPY stack.yaml /root/.stack/global-project/stack.yaml
 RUN stack upgrade
 RUN stack setup --system-ghc
 
-RUN stack install base bytestring text wai wai-extra scotty stm mtl unix-time \
-                  shakespeare network-uri cassava vector containers http-types extra
+RUN stack install scotty scotty-tls network-uri hxt shakespeare \
+                  http-client http-client-tls http-types uuid bytestring \
+                  base bytestring text wai wai-extra stm mtl unix-time \
+                  cassava vector containers http-types extra
 
 COPY run.sh /opt/
 
