@@ -17,8 +17,7 @@ RUN stack setup --system-ghc
 
 RUN stack install scotty scotty-tls network-uri hxt shakespeare \
                   http-client http-client-tls http-types uuid bytestring \
-                  base bytestring text wai wai-extra stm mtl unix-time \
-                  cassava vector containers http-types extra
+                  cassava extra
 
 COPY run.sh /opt/
 
