@@ -12,13 +12,13 @@ FROM openjdk:8-jre
 ENV YOURKIT_AGENT /opt/yourkit/bin/linux-x86-64/libyjpagent.so
 
 RUN\
-  wget -O /tmp/yourkit.zip https://www.yourkit.com/download/YourKit-JavaProfiler-2017.02-b68.zip &&\
+  wget -O /tmp/yourkit.zip https://www.yourkit.com/download/YourKit-JavaProfiler-2017.02-b75.zip &&\
   unzip /tmp/yourkit.zip -d /opt &&\
   mv /opt/YourKit-JavaProfiler-2017.02 /opt/yourkit &&\
   rm /tmp/yourkit.zip
 
 RUN\
-  wget -O /tmp/newrelic.zip https://download.newrelic.com/newrelic/java-agent/newrelic-agent/3.45.0/newrelic-java-3.45.0.zip &&\
+  wget -O /tmp/newrelic.zip https://download.newrelic.com/newrelic/java-agent/newrelic-agent/3.47.0/newrelic-java-3.47.0.zip &&\
   unzip /tmp/newrelic.zip -d /opt &&\
   rm /tmp/newrelic.zip &&\
   mkdir -p /opt/newrelic/logs /opt/newrelic/extensions
