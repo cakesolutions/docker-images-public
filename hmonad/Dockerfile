@@ -4,18 +4,23 @@ FROM haskell:8.2
 # binary from that directory. Allows for user-defined http servers.
 
 RUN apt-get update -qq && \
-    apt-get install -y make xz-utils curl && \
+    apt-get install -y make xz-utils && \
     apt-get autoremove -qq && \
     apt-get clean
 
 COPY stack.yaml /root/.stack/global-project/stack.yaml
 
+# Upgrade is necessary as the bundled version has a bug preventing it handling `--` within flags (1.6.1+ required)
+# See: https://github.com/commercialhaskell/stack/issues/3345
+RUN stack upgrade
 RUN stack setup --system-ghc
 
-RUN stack install scotty scotty-tls network-uri hxt shakespeare \
-                  http-client http-client-tls http-types uuid bytestring
+RUN stack install base bytestring text wai wai-extra scotty stm mtl unix-time \
+                  shakespeare network-uri cassava vector containers http-types extra
 
 COPY run.sh /opt/
+
+RUN chmod +x /opt/run.sh
 
 EXPOSE 80
 CMD ["/opt/run.sh"]
