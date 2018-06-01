@@ -1,26 +1,28 @@
-FROM haskell:8.2
+FROM debian:stretch
+ENV LANG C.UTF-8
 
 # compiles an hmonad.hs, mounted in /opt/src, and then runs the
 # binary from that directory. Allows for user-defined http servers.
 
 RUN apt-get update -qq && \
-    apt-get install -y make xz-utils curl && \
+    apt-get install --no-install-recommends -y curl ghc zlib1g-dev cabal-install && \
     apt-get autoremove -qq && \
     apt-get clean
 
-COPY stack.yaml /root/.stack/global-project/stack.yaml
-
-# Upgrade is necessary as the bundled version has a bug preventing it handling `--` within flags (1.6.1+ required)
-# See: https://github.com/commercialhaskell/stack/issues/3345
-RUN stack upgrade
-RUN stack setup --system-ghc
-
-RUN stack install scotty scotty-tls network-uri hxt shakespeare \
-                  http-client http-client-tls http-types uuid bytestring \
-                  cassava extra
+RUN cabal update && cabal install \
+  scotty \
+  scotty-tls \
+  network-uri \
+  hxt \
+  shakespeare \
+  http-client \
+  http-client-tls \
+  http-types \
+  uuid \
+  bytestring &&\
+  rm -rf /root/.cabal/packages /root/.cabal/logs /tmp/*
 
 COPY run.sh /opt/
-
 RUN chmod +x /opt/run.sh
 
 EXPOSE 80
