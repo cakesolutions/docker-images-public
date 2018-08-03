@@ -39,4 +39,4 @@ RUN ./support-files/mysql.server start && \
 EXPOSE 3306
 CMD ["/opt/run.sh"]
 
-HEALTHCHECK CMD /opt/mysql/server-5.6/bin/mysqladmin ping -h localhost
+HEALTHCHECK CMD test -e /tmp/mysqlready.lock

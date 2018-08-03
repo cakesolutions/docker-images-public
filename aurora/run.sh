@@ -21,5 +21,7 @@ for A in /schemas/*.sql ; do
     done
 done
 
+touch /tmp/mysqlready.lock
+
 fg
 
