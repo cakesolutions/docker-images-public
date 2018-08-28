@@ -19,7 +19,9 @@ RUN cabal update && cabal install \
   http-client-tls \
   http-types \
   uuid \
-  bytestring &&\
+  bytestring \
+  lens \
+  containers &&\
   rm -rf /root/.cabal/packages /root/.cabal/logs /tmp/*
 
 COPY run.sh /opt/
