@@ -18,7 +18,7 @@ RUN\
   rm /tmp/yourkit.zip
 
 RUN\
-  wget -O /tmp/newrelic.zip https://download.newrelic.com/newrelic/java-agent/newrelic-agent/4.5.0/newrelic-java-4.5.0.zip &&\
+  wget -O /tmp/newrelic.zip https://download.newrelic.com/newrelic/java-agent/newrelic-agent/4.10.0/newrelic-java-4.10.0.zip &&\
   unzip /tmp/newrelic.zip -d /opt &&\
   rm /tmp/newrelic.zip &&\
   mkdir -p /opt/newrelic/logs /opt/newrelic/extensions
