@@ -21,6 +21,7 @@ RUN cabal update && cabal install \
   uuid \
   bytestring \
   lens \
+  aeson \
   containers &&\
   rm -rf /root/.cabal/packages /root/.cabal/logs /tmp/*
 
